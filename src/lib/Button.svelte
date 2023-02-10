@@ -5,8 +5,9 @@
     export let secondary: boolean = false;
     export let disabled: boolean = false;
     export let size: 'big' | 'medium' | 'small' = 'medium';
-
     export let style: string='';
+    let className: string = '';
+    export {className as class};
 
     const dispatch = createEventDispatcher();
 
@@ -24,4 +25,5 @@
     }
 
 </script>
-<a class="button {size}" class:disabled={disabled} class:ignore={ignore} class:secondary={secondary} href="javascript:void(0)" {style} on:click={handleClickEvent}><slot/></a>
+<a class="button {size} {className}" class:disabled={disabled} class:ignore={ignore}
+   class:secondary={secondary} href="javascript:void(0)" {style} on:click={handleClickEvent}><slot/></a>
